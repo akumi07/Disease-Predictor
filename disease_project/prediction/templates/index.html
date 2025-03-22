@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: grid;
+            gap: 15px;
+        }
+        .input-group {
+            text-align: left;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        small {
+            color: #666;
+            font-size: 12px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        h3 {
+            color: #d9534f;
+        }
+        .definitions {
+            margin-top: 40px;
+            text-align: left;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .definitions h2 {
+            color: #333;
+            text-align: center;
+        }
+        .definitions p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Disease Prediction</h2>
+        <form action="/predict/" method="POST">
+            {% csrf_token %}
+
+            <div class="input-group">
+                <label for="Pregnancies">Pregnancies</label>
+                <input type="text" name="Pregnancies" id="Pregnancies" placeholder="Number of times pregnant" required>
+                <small>Example: 2</small>
+            </div>
+
+            <div class="input-group">
+                <label for="Glucose">Glucose Level</label>
+                <input type="text" name="Glucose" id="Glucose" placeholder="Blood sugar level (mg/dL)" required>
+                <small>Example: 120</small>
+            </div>
+
+            <div class="input-group">
+                <label for="BloodPressure">Blood Pressure</label>
+                <input type="text" name="BloodPressure" id="BloodPressure" placeholder="Blood pressure (mm Hg)" required>
+                <small>Example: 80</small>
+            </div>
+
+            <div class="input-group">
+                <label for="SkinThickness">Skin Thickness</label>
+                <input type="text" name="SkinThickness" id="SkinThickness" placeholder="Skin fold thickness (mm)" required>
+                <small>Example: 23</small>
+            </div>
+
+            <div class="input-group">
+                <label for="Insulin">Insulin Level</label>
+                <input type="text" name="Insulin" id="Insulin" placeholder="Insulin concentration (IU/mL)" required>
+                <small>Example: 79</small>
+            </div>
+
+            <div class="input-group">
+                <label for="BMI">BMI (Body Mass Index)</label>
+                <input type="text" name="BMI" id="BMI" placeholder="Weight/height ratio" required>
+                <small>Example: 25.4</small>
+            </div>
+
+            <div class="input-group">
+                <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+                <input type="text" name="DiabetesPedigreeFunction" id="DiabetesPedigreeFunction" placeholder="Genetic influence factor" required>
+                <small>Example: 0.672</small>
+            </div>
+
+            <div class="input-group">
+                <label for="Age">Age</label>
+                <input type="text" name="Age" id="Age" placeholder="Your age" required>
+                <small>Example: 35</small>
+            </div>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <h3>Prediction: {{ prediction }}</h3>
+        {% endif %}
+    </div>
+
+    <!-- Definitions Section -->
+    <div class="definitions">
+        <h2>Understanding the Input Parameters</h2>
+
+        <p><strong>1. Pregnancies:</strong> The number of times a woman has been pregnant. It is an important factor in diabetes risk assessment.</p>
+
+        <p><strong>2. Glucose Level:</strong> The amount of glucose present in the blood. High glucose levels may indicate diabetes.</p>
+
+        <p><strong>3. Blood Pressure:</strong> The pressure exerted by circulating blood on the walls of blood vessels. Normal blood pressure is around 120/80 mm Hg.</p>
+
+        <p><strong>4. Skin Thickness:</strong> The thickness of the skin fold in millimeters. It is used to estimate body fat percentage.</p>
+
+        <p><strong>5. Insulin Level:</strong> The concentration of insulin in the blood. Insulin helps regulate blood sugar levels, and abnormal levels may indicate diabetes.</p>
+
+        <p><strong>6. BMI (Body Mass Index):</strong> A measure of body fat based on weight and height. It is calculated as weight (kg) / height² (m²).</p>
+
+        <p><strong>7. Diabetes Pedigree Function:</strong> A score indicating the likelihood of diabetes based on family history. A higher score means a greater genetic risk.</p>
+
+        <p><strong>8. Age:</strong> The age of the individual. Older individuals have a higher risk of developing diabetes and other health conditions.</p>
+    </div>
+
+</body>
+</html>
