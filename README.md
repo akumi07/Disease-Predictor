@@ -1,8 +1,9 @@
+![Screenshot (120)](https://github.com/user-attachments/assets/25e75601-9bfa-4927-8fa1-998700317b61)
 ![Screenshot (121)](https://github.com/user-attachments/assets/7abb2559-80d4-4082-9e8b-8f472683fe3b)
 
 ![Screenshot (122)](https://github.com/user-attachments/assets/a64e3173-eee5-4a02-899e-095ae979d361)
 
-![Screenshot (120)](https://github.com/user-attachments/assets/25e75601-9bfa-4927-8fa1-998700317b61)
+
 
 🏥 Health Predictor - AI-Powered Disease Prediction
 Author: AKash Mishra
