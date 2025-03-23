@@ -37,7 +37,7 @@ Deployment: GitHub + Render/Vercel (Work in Progress)
 bash
 Copy
 Edit
-git clone https://github.com/your-username/Health-Predictor.git
+git clone [https://github.com/your-username/Health-Predictor.git](https://github.com/akumi07/Disease-Predictor.git)
 cd Health-Predictor
 2️⃣ Create & Activate Virtual Environment
 bash
